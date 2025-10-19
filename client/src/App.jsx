@@ -1,7 +1,12 @@
 import React from "react";
+import Player from "./components/Player";
 
 function App() {
-  return <div className="text-red-600">App</div>;
+  return (
+    <div>
+      <Player />
+    </div>
+  );
 }
 
 export default App;
