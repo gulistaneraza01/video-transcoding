@@ -1,0 +1,23 @@
+{
+  "name": "sqs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.18.2",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "@aws-sdk/client-ecs": "^3.913.0",
+    "@aws-sdk/client-sqs": "^3.913.0",
+    "dotenv": "^17.2.3"
+  }
+}
