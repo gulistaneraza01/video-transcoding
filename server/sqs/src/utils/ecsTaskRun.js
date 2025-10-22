@@ -27,7 +27,7 @@ async function runEcsTask(key) {
               { name: "REGION", value: process.env.REGION },
               { name: "ACCESSKEYID", value: process.env.ACCESSKEYID },
               { name: "SECRETACCESSKEY", value: process.env.SECRETACCESSKEY },
-              { name: "VIDEO_KEY", value: "input.mp4" },
+              { name: "VIDEO_KEY", value: key },
               { name: "BUCKET", value: process.env.BUCKET },
               { name: "OUTPUT_BUCKET", value: process.env.OUTPUT_BUCKET },
             ],

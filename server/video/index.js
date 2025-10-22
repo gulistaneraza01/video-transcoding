@@ -5,11 +5,13 @@ import masterPlaylist from "./utils/masterPlaylist.js";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import uploadToS3 from "./utils/uploadToS3.js";
+import deleteVideoFromS3 from "./utils/deleteVideoFromS3.js";
 dotenv.config();
 
 const videoKey = process.env.VIDEO_KEY;
-const buckey = process.env.BUCKET;
+const bucket = process.env.BUCKET;
 
+console.log(videoKey);
 async function init() {
   console.log("container started✅");
 
@@ -20,7 +22,7 @@ async function init() {
   const videoPath = path.join(__dirname, "output", "output.mp4");
 
   // download Video from
-  await downloadFromS3(buckey, videoKey, outputDirPath);
+  await downloadFromS3(bucket, videoKey, outputDirPath);
 
   //video transcode
   await transcode(videoPath, hslPath);
@@ -28,6 +30,9 @@ async function init() {
 
   //uplaod hsl video to S3
   await uploadToS3(hslPath);
+
+  //Delete video from S3
+  await deleteVideoFromS3(bucket, videoKey);
 
   console.log("container exit ✅");
 }

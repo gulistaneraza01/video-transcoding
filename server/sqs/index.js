@@ -28,6 +28,7 @@ async function init() {
           fileData.Records[0].s3.object.key.replace(/\+/g, " ")
         );
 
+        console.log(key);
         // constainer ecs
         runEcsTask(key);
 

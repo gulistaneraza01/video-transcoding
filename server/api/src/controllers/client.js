@@ -3,6 +3,7 @@ import TryCatch from "../utils/TryCatch.js";
 import { bucket } from "../utils/constaints.js";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 import s3Client from "../config/s3Client.js";
+import { nanoid } from "nanoid";
 
 export const presignedUrl = TryCatch(async (req, res) => {
   const { fileName } = req.body;
