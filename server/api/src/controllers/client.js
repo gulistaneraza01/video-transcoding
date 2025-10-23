@@ -10,7 +10,7 @@ export const presignedUrl = TryCatch(async (req, res) => {
   const userId = nanoid(4);
 
   const command = new PutObjectCommand({
-    Key: `${userId}/${fileName}.mp4`,
+    Key: `${userId}/${fileName}`,
     Bucket: bucket,
     ContentType: "video/mp4",
   });
